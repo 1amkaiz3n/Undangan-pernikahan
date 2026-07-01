@@ -447,28 +447,27 @@
             >
               Waktu Acara
             </h3>
-            <p class="text-gray-700 text-lg">Pukul 09:00 WIB</p>
+            <p class="text-gray-700 text-lg">Pukul 08:00 WIB</p>
             <p class="text-[#D4AF37] font-bold">Sampai Selesai</p>
           </div>
 
           <div
-            class="bg-[#FDFBF7] border border-[#D4AF37]/30 flex flex-col items-center p-10 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 group"
-          >
+            class="bg-[#FDFBF7] border border-[#D4AF37]/30 flex flex-col items-center p-10 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 group">
             <div
-              class="w-16 h-16 bg-[#1E293B] rounded-full flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform"
-            >
-              <i class="fas fa-map-marked-alt text-2xl text-[#D4AF37]"></i>
+              class="w-16 h-16 bg-[#1E293B] rounded-full flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform">
+              <i class="fas fa-home text-2xl text-[#D4AF37]"></i>
             </div>
-            <h3
-              class="text-xl font-secondary font-bold text-[#1E293B] mb-2 uppercase tracking-widest"
-            >
+          
+            <h3 class="text-xl font-secondary font-bold text-[#1E293B] mb-2 uppercase tracking-widest">
               Lokasi Acara
             </h3>
+          
             <p class="text-gray-700 text-lg font-bold">
-              Gedung Serbaguna Contoh
+              Kediaman Mempelai Wanita
             </p>
-            <p class="text-gray-500 text-sm italic">
-              Jl. Contoh No.123, Jakarta
+          
+            <p class="text-gray-500 text-sm italic text-center">
+              Jl. Nama Jalan No.123, Desa/Kelurahan, Kecamatan, Kota
             </p>
           </div>
         </div>
@@ -771,85 +770,7 @@
         <i class="fas fa-leaf text-9xl -rotate-45"></i>
       </div>
 
-      <div class="max-w-3xl mx-auto relative z-10">
-        <div class="flex flex-col items-center mb-12">
-          <h3 class="font-secondary text-3xl text-[#1E293B] mb-2">
-            Turut Mengundang
-          </h3>
-          <div class="flex items-center gap-3">
-            <div class="h-[1px] w-12 bg-[#D4AF37]"></div>
-            <i class="fas fa-heart text-[#D4AF37] text-xs"></i>
-            <div class="h-[1px] w-12 bg-[#D4AF37]"></div>
-          </div>
-        </div>
 
-        <div
-          class="bg-[#FDFBF7] border border-[#D4AF37]/20 p-8 md:p-12 rounded-[2rem] shadow-sm relative"
-        >
-          <div
-            class="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-[#D4AF37]/30 rounded-tl-xl"
-          ></div>
-          <div
-            class="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-[#D4AF37]/30 rounded-br-xl"
-          ></div>
-
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12 text-center md:text-left"
-          >
-            <div class="group">
-              <p
-                class="text-[10px] uppercase tracking-widest text-[#D4AF37] mb-1"
-              >
-                Keluarga Besar
-              </p>
-              <p class="font-secondary text-lg text-[#1E293B]">
-                Bapak Nama & Ibu Nama
-              </p>
-            </div>
-
-            <div class="group">
-              <p
-                class="text-[10px] uppercase tracking-widest text-[#D4AF37] mb-1"
-              >
-                Keluarga Besar
-              </p>
-              <p class="font-secondary text-lg text-[#1E293B]">
-                Bapak Nama & Ibu Nama
-              </p>
-            </div>
-
-            <div class="group">
-              <p
-                class="text-[10px] uppercase tracking-widest text-[#D4AF37] mb-1"
-              >
-                Keluarga Besar
-              </p>
-              <p class="font-secondary text-lg text-[#1E293B]">
-                Seluruh Keluarga Pihak Pria
-              </p>
-            </div>
-
-            <div class="group">
-              <p
-                class="text-[10px] uppercase tracking-widest text-[#D4AF37] mb-1"
-              >
-                Keluarga Besar
-              </p>
-              <p class="font-secondary text-lg text-[#1E293B]">
-                Seluruh Keluarga Pihak Wanita
-              </p>
-            </div>
-
-            <div
-              class="md:col-span-2 text-center mt-6 pt-6 border-t border-[#D4AF37]/10"
-            >
-              <p class="font-primary italic text-gray-500 text-sm">
-                Segenap Kerabat & Sahabat Karib
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section class="fade-in py-20 px-5 bg-[#FDFBF7]">
@@ -910,24 +831,25 @@
       // FUNGSI UTAMA: Buka Undangan & Putar Musik
       function openInvitation() {
         overlay.style.transform = "translateY(-100%)";
+
         setTimeout(() => {
           overlay.style.display = "none";
           document.body.style.overflow = "auto";
           musicContainer.classList.remove("hidden");
 
-          // Trigger animasi untuk section pertama setelah dibuka
           startReveal();
         }, 1000);
 
         music.play().catch((e) => console.log("Autoplay blocked:", e));
       }
 
+
       // Toggle Play/Pause Musik
       function toggleMusic() {
         if (music.paused) {
           music.play();
           icon.classList.replace("fa-music", "fa-pause");
-          icon.classList.add("fa-spin-slow"); // Opsional: tambah animasi putar
+          icon.classList.add("fa-spin-slow");
         } else {
           music.pause();
           icon.classList.replace("fa-pause", "fa-music");
@@ -935,55 +857,80 @@
         }
       }
 
+
       // COUNTDOWN LOGIC
-      const weddingDate = new Date("Okt 01, 2026 09:00:00").getTime();
+      // Format ISO: Tahun-Bulan-Tanggal Jam:Menit:Detik
+      const weddingDate = new Date("2026-10-01T09:00:00").getTime();
+
       const updateCountdown = () => {
         const now = new Date().getTime();
         const distance = weddingDate - now;
 
-        if (distance < 0) {
+        if (distance <= 0) {
           document.getElementById("countdown").innerHTML =
             "ACARA SUDAH DIMULAI";
+          clearInterval(timer);
           return;
         }
 
         document.getElementById("days").innerText = Math.floor(
           distance / (1000 * 60 * 60 * 24)
         );
+
         document.getElementById("hours").innerText = Math.floor(
-          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+          (distance % (1000 * 60 * 60 * 24)) /
+          (1000 * 60 * 60)
         );
+
         document.getElementById("minutes").innerText = Math.floor(
-          (distance % (1000 * 60 * 60)) / (1000 * 60)
+          (distance % (1000 * 60 * 60)) /
+          (1000 * 60)
         );
+
         document.getElementById("seconds").innerText = Math.floor(
-          (distance % (1000 * 60)) / 1000
+          (distance % (1000 * 60)) /
+          1000
         );
       };
-      setInterval(updateCountdown, 1000);
 
-      // SCROLL REVEAL ANIMATION (Intersection Observer)
+
+      const timer = setInterval(updateCountdown, 1000);
+      updateCountdown();
+
+
+      // SCROLL REVEAL ANIMATION
       function startReveal() {
+
         const observerOptions = {
-          threshold: 0.15, // Elemen muncul jika 15% bagian sudah masuk layar
+          threshold: 0.15
         };
 
+
         const observer = new IntersectionObserver((entries) => {
+
           entries.forEach((entry) => {
+
             if (entry.isIntersecting) {
+
               entry.target.classList.add("active");
-              // Jika pakai class fade-in yang kamu buat tadi:
+
               entry.target.style.opacity = "1";
               entry.target.style.transform = "translateY(0)";
+
+              observer.unobserve(entry.target);
             }
+
           });
+
         }, observerOptions);
 
-        // Daftarkan semua elemen yang ingin di-animasi
-        document.querySelectorAll(".fade-in, .reveal").forEach((el) => {
-          observer.observe(el);
-        });
+
+        document.querySelectorAll(".fade-in, .reveal")
+          .forEach((el) => {
+            observer.observe(el);
+          });
       }
+
     </script>
 
     
